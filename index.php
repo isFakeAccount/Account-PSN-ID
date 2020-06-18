@@ -21,7 +21,7 @@
       </form>
       <button type="submit" form="URLForm" value="Submit">Get PSN id</button><br>
      <footer></footer><h1>Console Output : </h1><br><?php
-          $URL_ = $_POST['url'];
+          $URL_ = escapeshellarg ($_POST['url']);
           echo shell_exec("python3 psn-account-id.py .$URL_");
       ?><br>
       <footer></footer>
